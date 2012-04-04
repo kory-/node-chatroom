@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Node chatroom</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/room.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container" style="padding-top:40px">
+    <div id="view"></div>
+    <form action="/chat" method="post" class="form-inline">
+      <div class="control-group<% if (error) { %> error<% } %>">
+        <% if (error) { %><p class="help-block"><%= error %></p><% } %>
+        <input id="room_name" name="room_name" type="text" />
+        <button class="btn" type="submit"><i class="icon-home"></i>Make room</button>
+      </div>
+    </form>
+  </div>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+

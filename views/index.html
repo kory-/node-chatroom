@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+    var socket = io.connect('/');
+    socket.on('news', function(data) {
+      console.log(data);
+      socket.emit('my oyher event', {my: 'data'});
+    });
+  </script>
+</body>
+</html>

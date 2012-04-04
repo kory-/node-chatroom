@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Node chatroom</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    .globalContainer {
+      width: 100%;
+    }
+    .hero{
+      position:fixed;
+      width: 100%;
+    }
+    .chat{
+      overflow-y: hidden;
+      padding-bottom: 70px;
+    }
+    .members{
+      padding-top:10px;
+      padding-right: 10px;
+      float: right;
+      position:fixed;
+      left: 74.468085099%;
+      width: 20% !important;
+    }
+    .inp{
+      width: 100%;
+      height: 65px;
+      overflow: visible;
+      margin-bottom:0px;
+      position: fixed;
+      bottom: 0;
+      background-color: #000000;
+    }
+    .comment {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    #comment {
+      width: 65%;
+    }
+    #view {
+      height:100%;
+    }
+    #view p{
+      font-size: 11px;
+      font-family: "lucida grande",tahoma,verdana,arial,'Hiragino Kaku Gothic Pro',Meiryo,'MS PGothic',sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="globalContainer">
+  <div class="hero well">
+    <div class="container" style="padding-top:20px">
+      <h1><%= title %></h1>
+    </div>
+  </div>
+
+  <div class="container-fluid" style="padding-top:100px">
+    <div class="row-fluid">
+      <div class="span9 chat">
+        <div id="view">　</div>
+      </div>
+      <div class="span3 visible-desktop members">
+        <h2>Members</h2>
+        <div class="well sidebar-nav">
+          <div id="counter"></div>
+          <div id="members"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="myModal">
+      <div class="modal-header">
+        <h3>Please enter your name</h3>
+      </div>
+      <div class="modal-body">
+        <div class="control-group" id="modal_name">
+          <input id="name" name="name" type="text" />
+          <div id="error_name"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn btn-primary" id="set-name">Enter</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid inp" style="padding-top:0px;">
+    <div class="row-fluid">
+      <div class="span8">
+        <div class="comment">
+          <form>
+            <input id="comment" type="text" value="" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/chat.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+
